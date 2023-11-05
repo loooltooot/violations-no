@@ -1,0 +1,10 @@
+{% extends "reports/base_site.html" %}
+{% load i18n %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="{% translate "Log in" %}">
+</form>
+{% endblock content %}
