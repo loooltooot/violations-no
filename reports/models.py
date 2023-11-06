@@ -40,7 +40,7 @@ class Report(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     report_description = models.TextField(_('violation description'), max_length=1500)
     car_plate = models.CharField(_('license plate number'), max_length=24)
-    status = models.CharField(_('status'), max_length=10, choices=STATUS_CHOICES, default=STATUS_CHOICES[0])
+    status = models.CharField(_('status'), max_length=10, choices=STATUS_CHOICES, default='new')
 
     def __str__(self):
         return f'{self.user.get_fio()} | {self.car_plate}'

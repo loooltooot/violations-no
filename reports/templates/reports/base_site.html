@@ -3,11 +3,12 @@
 {% block body %}
 <header>
     {% block header %}
+    <h1>Нарушениям нет</h1>
     <nav>
         <ul>
-            <li><a href="">{% translate "Home" %}</a></li>
+            <li><a href="{% url "reports:index" %}">{% translate "Home" %}</a></li>
             {% if user.is_authenticated %}
-                <li><a href="">{% translate "Create report" %}</a></li>
+                <li><a href="{% url "reports:newreport" %}">{% translate "Create report" %}</a></li>
                 <li><a href="{% url "reports:logout" %}">{% translate "Logout" %}</a></li>
             {% else %}
                 <li><a href="{% url "reports:register" %}">{% translate "Register" %}</a></li>
