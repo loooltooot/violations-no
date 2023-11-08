@@ -1,18 +1,31 @@
 {% extends "reports/base.html" %}
-{% load i18n %}
+{% load i18n static %}
 {% block body %}
 <header>
     {% block header %}
-    <h1>Нарушениям нет</h1>
+    <div class="logo">
+        <a href="{% url "reports:index" %}">
+            <img src="{% static "reports/imgs/logo.png" %}" alt="нарушениям нет">
+        </a>
+        {% if user.is_authenticated %}
+            <a class="button focused" href="{% url "reports:newreport" %}">{% translate "create report" %}</a>
+        {% endif %}
+    </div>
     <nav>
         <ul>
-            <li><a href="{% url "reports:index" %}">{% translate "Home" %}</a></li>
             {% if user.is_authenticated %}
-                <li><a href="{% url "reports:newreport" %}">{% translate "Create report" %}</a></li>
-                <li><a href="{% url "reports:logout" %}">{% translate "Logout" %}</a></li>
+                <li>
+                    <div class="account">
+                        <span class="name">{{user.last_name}} {{user.first_name}}</span>
+                        <div class="profile_picture">
+                            <img src="{% static "reports/imgs/police.png" %}" alt="profile">
+                        </div>
+                    </div>
+                </li>
+                <li><a href="{% url "reports:logout" %}">{% translate "logout" %}</a></li>
             {% else %}
-                <li><a href="{% url "reports:register" %}">{% translate "Register" %}</a></li>
-                <li><a href="{% url "reports:login" %}">{% translate "Login" %}</a></li>
+                <li><a href="{% url "reports:login" %}">{% translate "login" %}</a></li>
+                <li><a class="button" href="{% url "reports:register" %}">{% translate "register" %}</a></li>
             {% endif %}
         </ul>
     </nav>

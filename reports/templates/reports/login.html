@@ -1,10 +1,21 @@
 {% extends "reports/base_site.html" %}
-{% load i18n %}
+{% load i18n static %}
+
+{% block page_specific_styles %}
+<link rel="stylesheet" href="{% static "reports/css/login.css" %}">
+{% endblock page_specific_styles %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" value="{% translate "Log in" %}">
-</form>
+<div class="card">
+    <h2>{% translate "Authentication" %}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_div}}
+        <input type="submit" value="{% translate "log in" %}">
+    </form>
+</div>
+<div class="register_prompt">
+    <span>{% translate "Don't have account?" %}</span>
+    <a href="{% url "reports:register" %}">{% translate " Create one" %}</a>
+</div>
 {% endblock content %}

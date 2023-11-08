@@ -1,0 +1,205 @@
+:root {
+    --primary-blue-color: #0065B1;
+    --primary-blue-shade-color: #005494;
+    --primary-red-color: #EE3F58;
+    --bg-color: #FAFCFF;
+    --bg-shade-color: #F4F9FF;
+    --button-bg-color: #D9EFFF;
+    --button-text-color: #4EAAEF;
+    --button-focus-bg-color: var(--primary-blue-color);
+    --button-focus-text-color: #FFFFFF;
+    --card-bg-color: #FFFFFF;
+    --text-color: #66727F;
+
+    --s-font-size: .7em;
+    --base-font-size: 20px;
+    --h2-font-size: 2em;
+
+    --side-padding: 0 min(60px, 5vw);
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Bold.ttf');
+    font-weight: 700;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+img,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+* {
+    font-size: var(--base-font-size);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+form div {
+    position: relative;
+}
+
+form input {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form input:not([type="submit"]) {
+    background-color: var(--bg-shade-color);
+    padding: 25px 20px 5px;
+}
+
+form input:not([type="submit"])+label {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    color: var(--text-color);
+}
+
+form input[type="email"]:not(:placeholder-shown)+label,
+form input:not([type="submit"]):is(:focus, :valid)+label {
+    top: 5px;
+    font-size: var(--s-font-size);
+}
+
+form input[type="submit"] {
+    padding-block: 19px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--button-text-color);
+}
+
+a:hover {
+    color: var(--primary-blue-color);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main,
+body>header,
+body>footer {
+    padding: var(--side-padding);
+}
+
+.button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border-radius: 10px;
+    padding: 14px 21px;
+    transition: .3s ease;
+    display: block;
+}
+
+.button:hover {
+    background-color: var(--button-focus-bg-color);
+    color: var(--button-focus-text-color);
+}
+
+form input[type="submit"],
+.button.focused {
+    background-color: var(--button-focus-bg-color);
+    color: var(--button-focus-text-color);
+}
+
+form input[type="submit"]:hover,
+.button.focused:hover {
+    background-color: var(--primary-blue-shade-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    column-gap: 35px;
+}
+
+.card {
+    border-radius: 30px;
+    background-color: var(--card-bg-color);
+    padding: 21px 50px 40px;
+    box-sizing: border-box;
+}
+
+.card h2 {
+    width: fit-content;
+    margin-inline: auto;
+    margin-top: 0;
+}
+
+/* header */
+
+body>header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+}
+
+body>header nav ul {
+    column-gap: 25px;
+    align-items: center;
+}
+
+body>header .account {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+body>header .account .name {
+    font-weight: 700;
+}
+
+body>header .account .profile_picture {
+    border-radius: 100%;
+    overflow: clip;
+    background-color: var(--card-bg-color);
+    width: 63px;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body>header .account .profile_picture img {
+    margin-top: 20px;
+    max-width: none;
+    height: 170%;
+}

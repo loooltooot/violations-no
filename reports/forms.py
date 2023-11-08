@@ -12,7 +12,7 @@ class RegisterUserForm(UserCreationForm):
         widgets = {
             'last_name': forms.TextInput(attrs={'required': ''}),
             'first_name': forms.TextInput(attrs={'required': ''}),
-            'email': forms.EmailInput(attrs={'required': ''}),
+            'email': forms.EmailInput(attrs={'required': '', 'placeholder': ' '}),
             'tel': forms.TextInput(attrs={'id': 'phone-mask'}),
         }
 
