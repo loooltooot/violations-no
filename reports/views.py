@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import logout
+from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.http import HttpResponseRedirect
@@ -14,9 +14,15 @@ from . import forms, models
 class RegisterView(generic.CreateView):
     form_class = forms.RegisterUserForm
     template_name = 'reports/register.html'
+
+    def form_valid(self, form):
+        form.save()
+        new_user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'])
+        login(self.request, new_user)
+        return redirect(self.get_success_url())
     
     def get_success_url(self):
-        return reverse_lazy('reports:login')
+        return reverse_lazy('reports:index')
 
 def logout_user(request):
     logout(request)

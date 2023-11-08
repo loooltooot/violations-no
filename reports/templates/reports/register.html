@@ -1,13 +1,23 @@
 {% extends "reports/base_site.html" %}
 {% load i18n static %}
 
+{% block page_specific_styles %}
+<link rel="stylesheet" href="{% static "reports/css/register.css" %}">
+{% endblock page_specific_styles %}
+
 {% block content %}
 <div class="card">
+    <h2>{% translate "Register" %}</h2>
     <form method="post">
         {% csrf_token %}
         {{form.as_div}}
         <input type="submit" value="{% translate "register" %}">
     </form>
+</div>
+<div class="register_info">
+    <h2>{% translate "Conscious Citizen Portal" %}</h2>
+    <p>{% translate "Welcome to the" %} <span>нарушениям</span> <span>нет</span>, {% translate "where each of us can do our part to keep the roads safe. Our mission is to make the roads better for everyone by promoting compliance and participation in the process of preventing violations" %}</p>
+    <p>{% translate "Join us in making our roads safer for everyone. Together we can raise awareness, responsibility and consciousness among citizens, making road travel enjoyable and safe for everyone. Register and start taking action today!" %}</p>
 </div>
 
 <script src="{% static "reports/js/imask.min.js" %}"></script>

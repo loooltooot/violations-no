@@ -74,6 +74,10 @@ form input {
     box-sizing: border-box;
 }
 
+form input:focus {
+    outline: var(--primary-blue-color) 1px solid;
+}
+
 form input:not([type="submit"]) {
     background-color: var(--bg-shade-color);
     padding: 25px 20px 5px;
@@ -161,6 +165,11 @@ form input[type="submit"]:hover,
     width: fit-content;
     margin-inline: auto;
     margin-top: 0;
+}
+
+ul.errorlist li {
+    color: var(--text-color);
+    font-size: var(--s-font-size);
 }
 
 /* header */

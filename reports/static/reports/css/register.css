@@ -1,0 +1,30 @@
+main {
+    display: flex;
+    column-gap: 105px;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+main .card {
+    width: 498px;
+}
+
+main .register_info {
+    max-width: 617px;
+}
+
+main .register_info p {
+    color: var(--text-color);
+}
+
+main .register_info p span {
+    font-weight: 700;
+}
+
+main .register_info p span:nth-child(1) {
+    color: var(--primary-blue-color);
+}
+
+main .register_info p span:nth-child(2) {
+    color: var(--primary-red-color);
+}
