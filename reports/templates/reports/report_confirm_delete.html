@@ -1,16 +1,21 @@
 {% extends "reports/base_site.html" %}
-{% load i18n %}
+{% load i18n static %}
+
+{% block page_specific_styles %}
+<link rel="stylesheet" href="{% static "reports/css/delete_report.css" %}">
+{% endblock page_specific_styles %}
 
 {% block content %}
-<form method='post'>
-    {% csrf_token %}
-    <p>{% translate "Are you sure you want to delete this:" %}</p>
-    <code>
-        <h3>{{object.car_plate}}</h3>
-        <span>{{object.status}}</span>
-        <p>{{object.report_description}}</p>
-    </code>
-    {{form.as_div}}
-    <input type="submit" value="{% translate "Delete" %}">
-</form>
+<div class="card">
+    <h2>{% translate "Are you sure you want to delete this:" %}</h2>
+    <form method='post'>
+        {% csrf_token %}
+        <div class="report">
+            <h3 class="button">{{object.car_plate}}</h3>
+            <p>{{object.report_description}}</p>
+        </div>
+        {{form.as_div}}
+        <input type="submit" value="{% translate "Delete" %}">
+    </form>
+</div>
 {% endblock content %}

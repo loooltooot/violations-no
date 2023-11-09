@@ -1,0 +1,20 @@
+.report h3 {
+    margin: 0;
+    width: fit-content;
+}
+
+.report p {
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.card {
+    width: fit-content;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
