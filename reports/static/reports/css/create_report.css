@@ -2,6 +2,13 @@
     width: 498px;
 }
 
+form>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 form input.car_plate {
     padding: 13px 21px;
     font-size: var(--h2-font-size);
@@ -9,9 +16,12 @@ form input.car_plate {
     background-color: var(--button-bg-color);
     font-weight: 700;
     max-width: 300px;
-    margin-inline: auto;
     text-align: center;
     text-transform: uppercase;
+}
+
+form input.car_plate+label {
+    display: none;
 }
 
 main {

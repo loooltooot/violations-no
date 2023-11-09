@@ -24,6 +24,9 @@ class CreateReportForm(forms.ModelForm):
     class Meta:
         model = Report
         fields = ('car_plate', 'report_description')
+        widgets = {
+            'car_plate': forms.TextInput(attrs={'class': 'car_plate', 'placeholder': 'X111XX11'}),
+        }
 
     def clean_car_plate(self):
         car_plate = self.cleaned_data['car_plate'].upper()
