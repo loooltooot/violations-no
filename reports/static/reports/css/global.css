@@ -80,23 +80,27 @@ form div {
     position: relative;
 }
 
-form input {
+form textarea {
+    resize: none;
+}
+
+form :is(input, textarea) {
     border: none;
     border-radius: 10px;
     width: 100%;
     box-sizing: border-box;
 }
 
-form input:focus {
+form :is(input, textarea):focus {
     outline: var(--primary-blue-color) 1px solid;
 }
 
-form input:not([type="submit"]) {
+form :is(input, textarea):not([type="submit"]) {
     background-color: var(--bg-shade-color);
     padding: 25px 20px 5px;
 }
 
-form input:not([type="submit"])+label {
+form :is(input, textarea):not([type="submit"])+label {
     position: absolute;
     left: 20px;
     top: 15px;
@@ -104,7 +108,7 @@ form input:not([type="submit"])+label {
 }
 
 form input[type="email"]:not(:placeholder-shown)+label,
-form input:not([type="submit"]):is(:focus, :valid)+label {
+form :is(input, textarea):not([type="submit"]):is(:focus, :valid)+label {
     top: 5px;
     font-size: var(--s-font-size);
 }

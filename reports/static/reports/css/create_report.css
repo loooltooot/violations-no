@@ -1,0 +1,22 @@
+.card {
+    width: 498px;
+}
+
+form input.car_plate {
+    padding: 13px 21px;
+    font-size: var(--h2-font-size);
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color);
+    font-weight: 700;
+    max-width: 300px;
+    margin-inline: auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

@@ -1,10 +1,21 @@
 {% extends "reports/base_site.html" %}
-{% load i18n %}
+{% load i18n static %}
+
+{% block page_specific_styles %}
+<link rel="stylesheet" href="{% static "reports/css/create_report.css" %}">
+{% endblock page_specific_styles %}
 
 {% block content %}
-<form method='post'>
-    {% csrf_token %}
-    {{form.as_div}}
-    <input type="submit" value="{% translate "Create" %}">
-</form>
+<div class="card">
+    <h2>{% translate "Report" %}</h2>
+    <form method='post'>
+        {% csrf_token %}
+        <input class="car_plate" type="text" name="car_plate" placeholder="{% translate "X111XX11" %}">
+        <div>
+            <textarea name="report_description" cols="40" rows="10" maxlength="1500" required="" id="id_report_description"></textarea>
+            <label for="id_report_description">{% translate "Violation description" %}</label> 
+        </div>
+        <input type="submit" value="{% translate "Create" %}">
+    </form>
+</div>
 {% endblock content %}
