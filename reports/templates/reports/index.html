@@ -1,16 +1,22 @@
 {% extends "reports/base_site.html" %}
-{% load i18n %}
+{% load i18n static %}
+
+{% block page_specific_styles %}
+<link rel="stylesheet" href="{% static "reports/css/index.css" %}">
+{% endblock page_specific_styles %}
 
 {% block content %}
 <h2>{{user.get_fio}}, {% translate "your reports are here" %}</h2>
-<ul>
+<ul class="reports_list">
     {% for report in report_list %}
-        <li>
-            <h3>{{report.car_plate}}</h3>
-            <span>{{report.status}}</span>
+        <li class="report">
+            <div>
+                <h3 class="button">{{report.car_plate}}</h3>
+                <span class="status {{report.status}}">{{report.get_status_display}}</span>
+            </div>
             <p>{{report.report_description}}</p>
-            {% if report.status != 'accepted' %}
-                <a href="{% url "reports:deletereport" report.id %}">{% translate "Delete" %}</a>
+            {% if report.status == 'new' %}
+                <a href="{% url "reports:deletereport" report.id %}">{% translate "delete" %}</a>
             {% endif %}
         </li>
     {% endfor %}

@@ -2,6 +2,7 @@
     --primary-blue-color: #0065B1;
     --primary-blue-shade-color: #005494;
     --primary-red-color: #EE3F58;
+    --primary-red-shade-color: #be2f45;
     --bg-color: #FAFCFF;
     --bg-shade-color: #F4F9FF;
     --button-bg-color: #D9EFFF;
@@ -10,6 +11,8 @@
     --button-focus-text-color: #FFFFFF;
     --card-bg-color: #FFFFFF;
     --text-color: #66727F;
+    --second-green-color: #40DD76;
+    --second-green-shade-color: #35b963;
 
     --s-font-size: .7em;
     --base-font-size: 20px;
@@ -28,6 +31,16 @@
     font-family: 'Ubuntu';
     src: url('../fonts/Ubuntu-Bold.ttf');
     font-weight: 700;
+}
+
+::-moz-selection {
+    background-color: var(--button-text-color);
+    color: var(--card-bg-color);
+}
+
+::selection {
+    background-color: var(--button-text-color);
+    color: var(--card-bg-color);
 }
 
 body {

@@ -1,0 +1,53 @@
+main {
+    margin-top: 100px;
+}
+
+main h2 {
+    margin-top: 0;
+}
+
+.reports_list {
+    column-gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 65px;
+}
+
+.report a {
+    font-weight: 700;
+    color: var(--primary-red-color);
+}
+
+.report a:hover {
+    color: var(--primary-red-shade-color);
+}
+
+.report h3 {
+    margin: 0;
+}
+
+.report div .status.new {
+    color: var(--primary-blue-color);
+}
+
+.report div .status.accepted {
+    color: var(--second-green-color);
+}
+
+.report div .status.declined {
+    color: var(--primary-red-color);
+}
+
+.report div .status {
+    font-weight: 700;
+}
+
+.report div {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 10px;
+}
+
+.report p {
+    margin: 10px 0;
+    font-weight: 700;
+}
