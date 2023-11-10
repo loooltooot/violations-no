@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 from django.contrib import admin
+from django.utils import timezone
 
 # Create your models here.
 
@@ -41,6 +42,7 @@ class Report(models.Model):
     report_description = models.TextField(_('violation description'), max_length=1500)
     car_plate = models.CharField(_('license plate number'), max_length=24)
     status = models.CharField(_('status'), max_length=10, choices=STATUS_CHOICES, default='new')
+    creation_time = models.DateTimeField(_('creation time'), default=timezone.now)
 
     def __str__(self):
         return f'{self.user.get_fio()} | {self.car_plate}'

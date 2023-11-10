@@ -77,9 +77,21 @@ class AdminReportVoteView(PermissionRequiredMixin, generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(AdminReportVoteView, self).get_context_data(**kwargs)
-        context['oldest_reports'] = models.Report.objects.all()
+        context['oldest_reports'] = models.Report.objects.filter(status='new').order_by('creation_time')[:8]
         return context
 
 def admin_report_vote_proxy(request):
-    oldest_report = get_object_or_404(models.Report, pk=1)
+    oldest_report = models.Report.objects.filter(status='new').order_by('creation_time').first()
+    if oldest_report is None:
+        raise Http404(_('There are no any new reports'))
     return redirect('reports:votereport', pk=oldest_report.id)
+
+def change_report_status(request, pk):
+    report = get_object_or_404(models.Report, pk=pk)
+    new_status = request.POST['status']
+
+    if report.status != new_status:
+        report.status = new_status
+        report.save()
+    
+    return redirect('reports:votereport_proxy')

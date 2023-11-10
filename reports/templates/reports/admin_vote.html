@@ -2,9 +2,43 @@
 {% load i18n static %}
 
 {% block page_specific_styles %}
-
+<link rel="stylesheet" href="{% static "reports/css/admin_vote.css" %}">
 {% endblock page_specific_styles %}
 
 {% block content %}
-{{report.car_plate}}
+{% if report.status != 'new' %}
+<h2>{% translate "Status of this report is already determined" %}</h2>
+{% else %}
+<div>
+    <ul class="oldest_reports">
+        {% for old_report in oldest_reports %}
+            <li>
+                <a class="button{% if old_report.id == report.id %} focused{% endif %}" href="{% url "reports:votereport" old_report.id %}">{{old_report.car_plate}}</a>
+                <span class="user_fio">{{old_report.user.get_fio}}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="report">
+    <div>
+        <h3 class="button">{{report.car_plate}}</h3>
+        <span class="user_name">{{report.user.get_fio}}</span>
+        <a class="button" href="/admin/reports/myuser/{{report.user.id}}/change/">{% translate "reporter's page" %}</a>
+    </div>
+    <h4>{% translate "Description" %}</h4>
+    <p>{{report.report_description}}</p>
+    <div class="vote_buttons">
+        <form action="{% url "reports:changereportstatus" report.id %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="status" value="accepted">
+            <button class="accept">{% translate "accept" %}</button>
+        </form>
+        <form action="{% url "reports:changereportstatus" report.id %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="status" value="declined">
+            <button class="decline">{% translate "decline" %}</button>
+        </form>
+    </div>
+</div>
+{% endif %}
 {% endblock content %}

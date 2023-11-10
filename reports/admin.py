@@ -5,6 +5,9 @@ from django.utils.translation import gettext_lazy as _
 
 # Register your models here.
 
+admin.AdminSite.site_header = 'нарушениям нет'
+admin.AdminSite.site_title = 'нарушениям нет'
+
 class ReportsInline(admin.TabularInline):
     model = Report
     extra = 0

@@ -1,0 +1,85 @@
+main {
+    display: flex;
+    column-gap: 210px;
+    margin-top: 80px;
+}
+
+.oldest_reports {
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.oldest_reports a {
+    width: fit-content;
+    font-weight: 700;
+}
+
+.oldest_reports a.focused+.user_fio {
+    color: var(--text-shade-color);
+}
+
+.oldest_reports .user_fio {
+    font-size: var(--s-font-size);
+    color: var(--text-color);
+}
+
+.report div {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+}
+
+.report h3 {
+    font-size: var(--h2-font-size);
+}
+
+.report h4 {
+    margin: 20px 0 0;
+    font-size: var(--s-font-size);
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.report .user_name {
+    font-size: var(--h2-font-size);
+    font-weight: 700;
+}
+
+.report h3 {
+    margin: 0;
+    width: fit-content;
+}
+
+.report p {
+    margin: 5px 0;
+}
+
+.vote_buttons {
+    margin-top: 90px;
+}
+
+.vote_buttons button {
+    border-radius: 10px;
+    padding: 13px 21px;
+    color: var(--card-bg-color);
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.vote_buttons button.accept {
+    background-color: var(--second-green-color);
+}
+
+.vote_buttons button.decline {
+    background-color: var(--primary-red-color);
+}
+
+.vote_buttons button.accept:hover {
+    background-color: var(--second-green-shade-color);
+}
+
+.vote_buttons button.decline:hover {
+    background-color: var(--primary-red-shade-color);
+}

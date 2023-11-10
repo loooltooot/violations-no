@@ -11,6 +11,7 @@ urlpatterns = [
     path('', views.IndexView.as_view(extra_context={'title': _('Home')}), name='index'),
     path('newreport/', views.CreateReportView.as_view(extra_context={'title': _('Create report')}), name='newreport'),
     path('report/<int:pk>/delete/', views.DeleteReportView.as_view(extra_context={'title': _('Delete report')}), name='deletereport'),
-    path('report/admin/vote/', views.admin_report_vote_proxy, name='votereport_proxy'),
-    path('report/admin/<int:pk>/vote/', views.AdminReportVoteView.as_view(extra_context={'title': _('Report status')}), name='votereport'),
+    path('report/admin/', views.admin_report_vote_proxy, name='votereport_proxy'),
+    path('report/admin/<int:pk>/', views.AdminReportVoteView.as_view(extra_context={'title': _('Report status')}), name='votereport'),
+    path('report/admin/<int:pk>/vote', views.change_report_status, name='changereportstatus'),
 ]
