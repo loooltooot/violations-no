@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout, login, authenticate
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views import generic
 from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse_lazy
@@ -68,3 +68,18 @@ class DeleteReportView(LoginRequiredMixin, generic.DeleteView):
 
     def get_success_url(self):
         return reverse_lazy('reports:index')
+
+class AdminReportVoteView(PermissionRequiredMixin, generic.DetailView):
+    model = models.Report
+    redirect_field_name = ''
+    permission_required = ('reports.change_report',)
+    template_name = 'reports/admin_vote.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(AdminReportVoteView, self).get_context_data(**kwargs)
+        context['oldest_reports'] = models.Report.objects.all()
+        return context
+
+def admin_report_vote_proxy(request):
+    oldest_report = get_object_or_404(models.Report, pk=1)
+    return redirect('reports:votereport', pk=oldest_report.id)

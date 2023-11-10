@@ -8,7 +8,15 @@
             <img src="{% static "reports/imgs/logo.png" %}" alt="нарушениям нет">
         </a>
         {% if user.is_authenticated %}
-            <a class="button focused" href="{% url "reports:newreport" %}">{% translate "create report" %}</a>
+            <a class="button focused" href="{% if user.is_superuser %}
+                {% url "reports:votereport_proxy" %}
+            {% else %}
+                {% url "reports:newreport" %}
+            {% endif %}">{% if user.is_superuser %}
+                {% translate "reports validation" %}
+            {% else %}
+                {% translate "create report" %}
+            {% endif %}</a>
         {% endif %}
     </div>
     <nav>
