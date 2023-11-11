@@ -2,7 +2,7 @@ main {
     display: flex;
     column-gap: 105px;
     justify-content: center;
-    padding: 50px 0;
+    margin-block: 50px;
 }
 
 main .card {
@@ -27,4 +27,14 @@ main .register_info p span:nth-child(1) {
 
 main .register_info p span:nth-child(2) {
     color: var(--primary-red-color);
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        flex-direction: column;
+    }
+
+    main .register_info {
+        max-width: 100%;
+    }
 }

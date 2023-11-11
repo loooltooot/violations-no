@@ -230,3 +230,33 @@ body>header .account .profile_picture img {
     max-width: none;
     height: 170%;
 }
+
+/* mobile */
+
+@media screen and (max-width: 500px) {
+    :root {
+        --base-font-size: 16px;
+    }
+
+    .card {
+        max-width: 100%;
+        padding: 21px 30px 40px;
+    }
+
+    body>header {
+        padding-top: 15px;
+        column-gap: 30px;
+    }
+
+    body>header nav ul {
+        column-gap: 10px;
+    }
+
+    body>header.auth .logo {
+        column-gap: 0;
+    }
+
+    body>header.auth .logo img {
+        display: none;
+    }
+}
