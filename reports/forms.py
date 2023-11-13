@@ -10,8 +10,9 @@ class RegisterUserForm(UserCreationForm):
         model = MyUser
         fields = ('last_name', 'first_name', 'patronymic', 'email', 'tel', 'username', 'password1', 'password2')
         widgets = {
-            'last_name': forms.TextInput(attrs={'required': ''}),
-            'first_name': forms.TextInput(attrs={'required': ''}),
+            'last_name': forms.TextInput(attrs={'required': '', 'id': 'last_name'}),
+            'first_name': forms.TextInput(attrs={'required': '', 'id': 'first_name'}),
+            'patronymic': forms.TextInput(attrs={'id': 'patronymic'}),
             'email': forms.EmailInput(attrs={'required': '', 'placeholder': ' '}),
             'tel': forms.TextInput(attrs={'id': 'phone-mask'}),
         }
