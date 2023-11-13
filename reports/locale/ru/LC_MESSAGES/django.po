@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-13 15:55+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: admin.py:26 admin.py:45
+msgid "Personal information"
+msgstr "Персональная информация"
+
+#: admin.py:32
+msgid "Permissions"
+msgstr "Права доступа"
+
+#: apps.py:7
+msgid "reports"
+msgstr "сообщения"
+
+#: forms.py:39
+msgid "Enter valid licence plate number"
+msgstr "Введите госномер правильного формата"
+
+#: models.py:11
+msgid "patronymic"
+msgstr "отчество"
+
+#: models.py:12
+msgid "phone number"
+msgstr "номер телефона"
+
+#: models.py:12
+msgid "Example: +7(XXX)-XXX-XX-XX"
+msgstr "Пример: +7(XXX)-XXX-XX-XX"
+
+#: models.py:16
+msgid "Full name"
+msgstr "ФИО"
+
+#: models.py:32
+msgid "violation report"
+msgstr "сообщение о нарушении"
+
+#: models.py:33
+msgid "violation reports"
+msgstr "сообщения о нарушении"
+
+#: models.py:36
+msgid "new"
+msgstr "новое"
+
+#: models.py:37
+msgid "accepted"
+msgstr "принято"
+
+#: models.py:38
+msgid "declined"
+msgstr "отклонено"
+
+#: models.py:42
+msgid "violation description"
+msgstr "описание нарушения"
+
+#: models.py:43
+msgid "license plate number"
+msgstr "госномер"
+
+#: models.py:44
+msgid "status"
+msgstr "статус"
+
+#: models.py:45
+msgid "creation time"
+msgstr "время создания"
+
+#: templates/reports/admin_vote.html:10
+msgid "Status of this report is already determined"
+msgstr "Статус этого заявления уже определен"
+
+#: templates/reports/admin_vote.html:26
+msgid "reporter's page"
+msgstr "страница заявителя"
+
+#: templates/reports/admin_vote.html:28
+msgid "Description"
+msgstr "Описание"
+
+#: templates/reports/admin_vote.html:34
+msgid "accept"
+msgstr "принять"
+
+#: templates/reports/admin_vote.html:39
+msgid "decline"
+msgstr "отклонить"
+
+#: templates/reports/base_site.html:16
+msgid "reports validation"
+msgstr "проверка сообщений"
+
+#: templates/reports/base_site.html:18
+msgid "create report"
+msgstr "сообщить о нарушении"
+
+#: templates/reports/base_site.html:33
+msgid "logout"
+msgstr "выйти"
+
+#: templates/reports/base_site.html:35
+msgid "login"
+msgstr "войти"
+
+#: templates/reports/base_site.html:36 templates/reports/register.html:14
+msgid "register"
+msgstr "зарегистрироваться"
+
+#: templates/reports/create_report.html:10
+msgid "Report"
+msgstr "Сообщение"
+
+#: templates/reports/create_report.html:14
+msgid "create a report"
+msgstr "сообщить о нарушении"
+
+#: templates/reports/index.html:9
+msgid "your reports are here"
+msgstr "ваши сообщения здесь"
+
+#: templates/reports/index.html:19
+msgid "delete"
+msgstr "удалить"
+
+#: templates/reports/login.html:10
+msgid "Authentication"
+msgstr "Авторизация"
+
+#: templates/reports/login.html:14
+msgid "log in"
+msgstr "войти"
+
+#: templates/reports/login.html:18
+msgid "Don't have account?"
+msgstr "Нет аккаунта?"
+
+#: templates/reports/login.html:19
+msgid " Create one"
+msgstr " Создать"
+
+#: templates/reports/register.html:10 urls.py:8
+msgid "Register"
+msgstr "Регистрация"
+
+#: templates/reports/register.html:18
+msgid "Conscious Citizen Portal"
+msgstr "Портал сознательных граждан"
+
+#: templates/reports/register.html:19
+msgid "Welcome to the"
+msgstr "Добро пожаловать на портал"
+
+#: templates/reports/register.html:19
+msgid ""
+"where each of us can do our part to keep the roads safe. Our mission is to "
+"make the roads better for everyone by promoting compliance and participation "
+"in the process of preventing violations"
+msgstr "где каждый из нас может сделать свой вклад в обеспечение безопасности на дорогах. Наша миссия - сделать дороги лучше для всех, содействуя соблюдению правил и участию в процессе предотвращения нарушений"
+
+#: templates/reports/register.html:20
+msgid ""
+"Join us in making our roads safer for everyone. Together we can raise "
+"awareness, responsibility and consciousness among citizens, making road "
+"travel enjoyable and safe for everyone. Register and start taking action "
+"today!"
+msgstr "Присоединяйтесь к нам, чтобы сделать наши дороги безопаснее для всех. Вместе мы можем повысить осведомленность, ответственность и сознательность граждан, сделав дорожное движение приятным и безопасным для каждого. Регистрируйтесь и начните действовать сегодня!"
+
+#: templates/reports/report_confirm_delete.html:10
+msgid "Are you sure you want to delete this:"
+msgstr "Уверены, что хотите удалить это сообщение:"
+
+#: templates/reports/report_confirm_delete.html:18
+msgid "Delete"
+msgstr "Удалить"
+
+#: urls.py:10
+msgid "Log in"
+msgstr "Войти"
+
+#: urls.py:11
+msgid "Home"
+msgstr "Главная"
+
+#: urls.py:12
+msgid "Create report"
+msgstr "Сообщить о нарушении"
+
+#: urls.py:13
+msgid "Delete report"
+msgstr "Удалить сообщение"
+
+#: urls.py:15
+msgid "Report status"
+msgstr "Статус сообщения"
+
+#: views.py:66
+msgid "You cannot delete this report"
+msgstr "Вы не можете удалить это сообщение"
+
+#: views.py:86
+msgid "There are no any new reports"
+msgstr "Новых сообщений нет"

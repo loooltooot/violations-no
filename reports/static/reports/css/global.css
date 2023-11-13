@@ -250,6 +250,7 @@ body>header .account .profile_picture img {
 
     body>header nav ul {
         column-gap: 10px;
+        flex-wrap: wrap;
     }
 
     body>header.auth .logo {
